@@ -1,3 +1,7 @@
+output "subscription_policy_exemptions_id" {
+  description = "Map of id values across all subscription_policy_exemptions, keyed the same as var.subscription_policy_exemptions"
+  value       = { for k, v in azurerm_subscription_policy_exemption.subscription_policy_exemptions : k => v.id }
+}
 output "subscription_policy_exemptions_description" {
   description = "Map of description values across all subscription_policy_exemptions, keyed the same as var.subscription_policy_exemptions"
   value       = { for k, v in azurerm_subscription_policy_exemption.subscription_policy_exemptions : k => v.description }
